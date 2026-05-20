@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,6 +25,7 @@
       <a href="#characters">Characters</a>
       <a href="#world">World</a>
       <a href="#gallery">Media</a>
+      <a href="#missions">Missions</a>
     </nav>
   </header>
 
@@ -49,7 +51,7 @@
       </p>
 
       <div class="buttons">
-        <button>WATCH TRAILER</button>
+        <button id="trailerBtn">WATCH TRAILER</button>
         <button class="outline">JOIN COMMUNITY</button>
       </div>
     </div>
@@ -155,6 +157,110 @@
 
   </section>
 
+  <!-- MISSIONS -->
+  <section class="missions" id="missions">
+
+    <p class="section-title">STORY MISSIONS</p>
+
+    <h2>Every Mission Changes The City.</h2>
+
+    <div class="mission-grid">
+
+      <div class="mission-card">
+        <img src="assets/missions/pickuppops.jpg">
+        <div class="mission-info">
+          <p>CHAPTER 1</p>
+          <h3>Pick Up Pops</h3>
+        </div>
+      </div>
+
+      <div class="mission-card">
+        <img src="assets/missions/63rdnights.jpg">
+        <div class="mission-info">
+          <p>CHAPTER 2</p>
+          <h3>63rd Nights</h3>
+        </div>
+      </div>
+
+      <div class="mission-card">
+        <img src="assets/missions/loyalty.jpg">
+        <div class="mission-info">
+          <p>CHAPTER 3</p>
+          <h3>No Loyalty</h3>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- SOCIAL FEED -->
+  <section class="feed">
+
+    <p class="section-title">CITY FEED</p>
+
+    <h2>The Streets Never Sleep.</h2>
+
+    <div class="feed-container">
+
+      <div class="post">
+        <span>@SouthsideScanner</span>
+        <p>Heavy police activity reported near Englewood.</p>
+      </div>
+
+      <div class="post">
+        <span>@LakeviewNews</span>
+        <p>Rumors spread that Marcus Reed has returned home.</p>
+      </div>
+
+      <div class="post">
+        <span>@RealMara</span>
+        <p>City getting dangerous again...</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- SOUNDTRACK -->
+  <section class="soundtrack">
+
+    <p class="section-title">OFFICIAL SOUNDTRACK</p>
+
+    <h2>Music From The South.</h2>
+
+    <div class="tracks">
+
+      <div class="track">
+        <h3>Late Night Sliding</h3>
+        <p>Southside Baby</p>
+      </div>
+
+      <div class="track">
+        <h3>No Sleep In Englewood</h3>
+        <p>Yung Redd</p>
+      </div>
+
+      <div class="track">
+        <h3>Rain On 63rd</h3>
+        <p>Mara Vaughn</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- TRAILER MODAL -->
+  <div class="trailer-modal" id="trailerModal">
+
+    <span id="closeTrailer">&times;</span>
+
+    <video controls>
+      <source src="assets/videos/trailer.mp4" type="video/mp4">
+    </video>
+
+  </div>
+
   <!-- FOOTER -->
   <footer>
 
@@ -166,5 +272,109 @@
 
   <script src="script.js"></script>
 
+  <script>
+    const trailerBtn = document.getElementById("trailerBtn");
+    const trailerModal = document.getElementById("trailerModal");
+    const closeTrailer = document.getElementById("closeTrailer");
+
+    trailerBtn.onclick = () => {
+      trailerModal.style.display = "flex";
+    };
+
+    closeTrailer.onclick = () => {
+      trailerModal.style.display = "none";
+    };
+  </script>
+
 </body>
 </html>
+```
+
+```css
+/* ADD THIS TO style.css */
+
+.missions,
+.feed,
+.soundtrack {
+  padding: 120px 10%;
+  background: #0b0b0b;
+  color: white;
+}
+
+.mission-grid,
+.gallery-grid,
+.character-grid,
+.tracks {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.mission-card,
+.track,
+.post,
+.card {
+  background: #121212;
+  border-radius: 18px;
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+
+.mission-card:hover,
+.track:hover,
+.post:hover,
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+.mission-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+
+.mission-info,
+.track,
+.post {
+  padding: 20px;
+}
+
+.feed-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.post span {
+  color: #8b5cf6;
+  font-weight: 700;
+}
+
+.trailer-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.95);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.trailer-modal video {
+  width: 80%;
+  border-radius: 20px;
+}
+
+#closeTrailer {
+  position: absolute;
+  top: 40px;
+  right: 60px;
+  color: white;
+  font-size: 50px;
+  cursor: pointer;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+```
