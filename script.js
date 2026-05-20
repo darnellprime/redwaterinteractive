@@ -1,46 +1,43 @@
-const modal = document.getElementById("characterModal");
+// Smooth navbar transition
 
-const data = {
-  jalen: {
-    name: "Jalen Red",
-    role: "Main Protagonist",
-    story: "Raised in a violent city where survival means everything. Jalen is forced into a world he never asked for.",
-    connection: "Son of Marcus Reed. His choices shape the entire city war."
-  },
+window.addEventListener("scroll", () => {
 
-  marcus: {
-    name: "Marcus Reed",
-    role: "Gang Leader / Father",
-    story: "A former gang ruler now imprisoned, still controlling the streets from behind bars.",
-    connection: "Father of Jalen. His past creates the main conflict."
-  },
+  const navbar = document.querySelector(".navbar");
 
-  amara: {
-    name: "Amara Vaughn",
-    role: "Influencer / Wild Card",
-    story: "A powerful media figure controlling public perception of the city’s underground wars.",
-    connection: "Romantic + strategic connection to Jalen."
+  if(window.scrollY > 80){
+    navbar.style.background = "rgba(0,0,0,0.85)";
+    navbar.style.padding = "18px 8%";
+  } else {
+    navbar.style.background = "rgba(0,0,0,0.45)";
+    navbar.style.padding = "25px 8%";
   }
-};
 
-document.querySelectorAll(".card").forEach(card => {
-  card.addEventListener("click", () => {
-
-    const key = card.dataset.character;
-
-    document.getElementById("charName").innerText = data[key].name;
-    document.getElementById("charRole").innerText = data[key].role;
-    document.getElementById("charStory").innerText = data[key].story;
-    document.getElementById("charConnection").innerText = data[key].connection;
-
-    modal.classList.remove("hidden");
-  });
 });
 
-document.getElementById("closeModal").onclick = () => {
-  modal.classList.add("hidden");
-};
 
-document.querySelector(".modal-overlay").onclick = () => {
-  modal.classList.add("hidden");
-};
+// Fade-in animation on scroll
+
+const observer = new IntersectionObserver((entries) => {
+
+  entries.forEach(entry => {
+
+    if(entry.isIntersecting){
+      entry.target.style.opacity = "1";
+      entry.target.style.transform = "translateY(0px)";
+    }
+
+  });
+
+}, {
+  threshold:0.15
+});
+
+document.querySelectorAll("section").forEach(section => {
+
+  section.style.opacity = "0";
+  section.style.transform = "translateY(60px)";
+  section.style.transition = "1s ease";
+
+  observer.observe(section);
+
+});
