@@ -8,8 +8,10 @@
   <link rel="stylesheet" href="style.css"/>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
   <!-- NAVBAR -->
@@ -32,6 +34,8 @@
 
     <video autoplay muted loop playsinline class="hero-video">
       <source src="assets/videos/city.mp4" type="video/mp4">
+      <!-- fallback -->
+      Your browser does not support the video tag.
     </video>
 
     <div class="overlay"></div>
@@ -49,8 +53,8 @@
       </p>
 
       <div class="buttons">
-        <button>WATCH TRAILER</button>
-        <button class="outline">JOIN COMMUNITY</button>
+        <button type="button">WATCH TRAILER</button>
+        <button type="button" class="outline">JOIN COMMUNITY</button>
       </div>
     </div>
 
@@ -70,7 +74,7 @@
     </div>
 
     <div class="about-image">
-      <img src="assets/images/city.jpg" alt="">
+      <img src="assets/images/city.jpg" alt="City background" loading="lazy">
     </div>
 
   </section>
@@ -79,13 +83,12 @@
   <section class="characters" id="characters">
 
     <p class="section-title">MAIN CHARACTERS</p>
-
     <h2>The Faces Of Redwater</h2>
 
     <div class="character-grid">
 
       <div class="card">
-        <img src="assets/jalen.png">
+        <img src="assets/images/jalen.png" alt="Jalen Reed" loading="lazy">
         <div class="card-info">
           <p>Main Protagonist</p>
           <h3>Jalen Reed</h3>
@@ -93,17 +96,17 @@
       </div>
 
       <div class="card">
-        <img src="assets/marcus.png">
+        <img src="assets/images/marcus.png" alt="Marcus Reed" loading="lazy">
         <div class="card-info">
-          <p>Gang Leader, Prisoner & Jalens Dad</p>
+          <p>Gang Leader, Prisoner & Jalen’s Father</p>
           <h3>Marcus Reed</h3>
         </div>
       </div>
 
       <div class="card">
-        <img src="assets/amara.png">
+        <img src="assets/images/amara.png" alt="Amara Vaughn" loading="lazy">
         <div class="card-info">
-          <p>Influencer & Jalens Baby Mama</p>
+          <p>Influencer & Jalen’s Partner</p>
           <h3>Amara Vaughn</h3>
         </div>
       </div>
@@ -116,13 +119,12 @@
   <section class="world" id="world">
 
     <div class="world-image">
-      <img src="assets/world.png">
+      <img src="assets/images/world.png" alt="Game world map" loading="lazy">
     </div>
 
     <div class="world-content">
 
       <p class="section-title">OPEN WORLD</p>
-
       <h2>Built From The Streets Up.</h2>
 
       <ul>
@@ -141,27 +143,23 @@
   <section class="gallery" id="gallery">
 
     <p class="section-title">MEDIA GALLERY</p>
-
     <h2>Latest Screenshots</h2>
 
     <div class="gallery-grid">
-      <img src="assets/gallery1.png">
-      <img src="assets/gallery2.png">
-      <img src="assets/gallery3.png">
-      <img src="assets/gallery4.png">
-      <img src="assets/gallery5.png">
-      <img src="assets/gallery6.png">
+      <img src="assets/images/gallery1.png" alt="Screenshot 1" loading="lazy">
+      <img src="assets/images/gallery2.png" alt="Screenshot 2" loading="lazy">
+      <img src="assets/images/gallery3.png" alt="Screenshot 3" loading="lazy">
+      <img src="assets/images/gallery4.png" alt="Screenshot 4" loading="lazy">
+      <img src="assets/images/gallery5.png" alt="Screenshot 5" loading="lazy">
+      <img src="assets/images/gallery6.png" alt="Screenshot 6" loading="lazy">
     </div>
 
   </section>
 
   <!-- FOOTER -->
   <footer>
-
     <h2>REDWATER INTERACTIVE</h2>
-
     <p>© 2026 Southern Street Stories. All Rights Reserved.</p>
-
   </footer>
 
   <script src="script.js"></script>
